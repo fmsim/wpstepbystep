@@ -12,47 +12,61 @@
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
-<head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<head>
+		<meta charset="<?php bloginfo( 'charset' ); ?>">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="profile" href="http://gmpg.org/xfn/11">
 
-	<?php wp_head(); ?>
-</head>
+		<?php wp_head(); ?>
+	</head>
 
-<body <?php body_class(); ?>>
-<div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'good-house-grill' ); ?></a>
-
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$good_house_grill_description = get_bloginfo( 'description', 'display' );
-			if ( $good_house_grill_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $good_house_grill_description; /* WPCS: xss ok. */ ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
-
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'good-house-grill' ); ?></button>
-			<?php
-			wp_nav_menu( array(
-				'theme_location' => 'menu-1',
-				'menu_id'        => 'primary-menu',
-			) );
-			?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
-
-	<div id="content" class="site-content">
+	<body <?php body_class(); ?>>
+		<!-- start-header -->
+		 <div class="header">
+		     <div class="wrap">
+				<div class="top-header">
+					<div class="logo">
+						<a href="<?php echo esc_url(home_url('/')); ?>">
+							<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo.png"
+							title="<?php bloginfo('name'); ?>" />
+						</a>
+					</div>
+					<div class="social-icons">
+						<ul>
+							<li><a href="#">
+								<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/facebook.png"
+								title="facebook" />
+							</a></li>
+							<li><a href="#">
+								<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/twitter.png"
+								title="twitter" />
+							</a></li>
+							<li><a href="#">
+								<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/google.png"
+								title="google pluse" />
+							</a></li>
+						</ul>
+					</div>
+					<div class="clear"> </div>
+				</div>
+				<!-- start-top-nav -->
+				<div class="top-nav">
+					<div class="top-nav-left">
+						<ul>
+							<li class="active"><a href="index.html">Home</a></li>
+							<li><a href="about.html">About</a></li>
+							<li><a href="menu.html">Menu</a></li>
+							<li><a href="contact.html">Contact</a></li>
+							<div class="clear"> </div>
+						</ul>
+					</div>
+					<div class="top-nav-right">
+						<?php get_search_form(); ?>
+					</div>
+					<div class="clear"> </div>
+				</div>
+				<!-- End-top-nav -->
+			</div>
+		</div>
+	   <!-- End-header -->
+		<div class="container">

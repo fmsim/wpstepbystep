@@ -103,18 +103,27 @@ add_action( 'after_setup_theme', 'good_house_grill_content_width', 0 );
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function good_house_grill_widgets_init() {
+function good_house_grille_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Sidebar', 'good-house-grill' ),
 		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', 'good-house-grill' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'description'   => esc_html__( 'Add widgets here.', 'good-house-grille' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'Footer Widgets', 'good-house-grille' ),
+		'id'            => 'footer-widgets',
+		'description'   => esc_html__( 'These are the widgets that appear in the footer.', 'good-house-grille' ),
+		'before_widget' => '<div id="%1$s" class="footer-grid %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
 	) );
 }
-add_action( 'widgets_init', 'good_house_grill_widgets_init' );
+add_action( 'widgets_init', 'good_house_grille_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
@@ -158,4 +167,3 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
-
