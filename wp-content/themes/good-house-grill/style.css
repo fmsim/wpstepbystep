@@ -1021,3 +1021,14 @@ body {
     font-size: 1em; }
   .menu-grid a span {
     line-height: 3em; } }
+
+.news-article {
+  border-bottom: 1px solid #999999;
+  margin: 20px 0;
+  padding-bottom: 10px; }
+  .news-article h2 {
+    padding-bottom: 10px; }
+  .news-article time {
+    display: block;
+    font-weight: bold;
+    padding: 0 0 15px 0; }
