@@ -1,4 +1,5 @@
 node_modules
+plugins
 wp-admin
 wp-includes
 .htaccess
