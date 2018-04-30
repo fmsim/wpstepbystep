@@ -100,7 +100,8 @@ nav.horizontal ul li {
 
 /* horizontal menu */
 img {
-  max-width: 100%; }
+  max-width: 100%;
+  width: auto; }
 
 /*end reset*/
 body {
